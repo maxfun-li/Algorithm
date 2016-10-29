@@ -2,7 +2,7 @@
 青蛙王子跳问题抽象为：对任意给定一个整数destination和两个正整数length1，length2，是否存在两个整数X, Y使得destination = X * length1 + Y * length2. 并给出使等式成立且|X| + |Y|最小的X, Y (若等式可成立，则X与Y的解由无数个).
 算法思路：
 	1. 不妨设length1 > length2 > length3 > length4 > length5 > length6 > length7> length8 >······ ,
-	 如下图所示，则有length1 = length2 + length3，length2 = length3 + length4，length3 = length4 + length5, ······，按照如此，将长度不等的两段依次分割下去，最终会得到相等的两段，即length(N-2) = length(N-1) + length(N), 且        length(N)=length(N-1)=minStep，则length(N-2) = 2 * minStep，length(N-3) = length(N-2) + length(N-1) = 3 * minStep，依此类推，length1和length2皆可有minStep表示，即length1 = k1 * minStep, length2 = k2 * minStep; 
+	 如下图所示，则有length1 = length2 + length3，length2 = length3 + length4，length3 = length4 + length5, ······，按照如此，将长度不等的两段依次分割下去，最终会得到相等的两段，即length(N-2) = length(N-1) + length(N), 且length(N)=length(N-1)=minStep，则length(N-2) = 2 * minStep，length(N-3) = length(N-2) + length(N-1) = 3 * minStep，依此类推，length1和length2皆可有minStep表示，即length1 = k1 * minStep, length2 = k2 * minStep; 
 	此外minStep = length(N) = length(N-2) - length(N-1)=(length(N-4) - length(N-3)) - (length(N-3) - length(N-2) = ······=k3 * length1 + k4 * length2;
 	所以一方面destination = X * length1 + Y * length2 = k1 * X *minStep + k2 * Y * minStep = (k1 * X + k2 * Y) * minStep. 所以等式要成立，则destination一定要能被minStep整除，记整除后商为k5，即 k5 =  (k1 * X + k2 * Y) .
 	另一方面minStep = k3 * length1 + k4 * length2. destination = k5 * minStep = k5 *  (k3 * length1 + k4 * length2).
