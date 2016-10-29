@@ -1,13 +1,13 @@
-ÇàÍÜÍõ×ÓÖ»ÔÚÒ»ÌõÖ±ÏßÉÏÌøÔ¾£¬Æä¿ªÊ¼Î»ÖÃÔÚÔ­µã0ÉÏ£¬¿ÉÏòÇ°»òÕßÏòºóÌø£¬µ«Ö»ÄÜÒÔÁ½ÖÖÖ¸¶¨µÄ³¤¶È(length1, length2)½øÐÐÌøÔ¾¡£ÅÐ¶ÏÇàÍÜÔÚÁ½ÖÖÖ¸¶¨µÄÌøÔ¾³¤¶ÈÏÂÄÜ·ñÌøµ½Ö¸¶¨µÄÄ¿±êµØµã(destination)£¬²¢¸ø³öÊ¹ÌøÊý×îÐ¡µÄÌøÔ¾·½·¨¡£
-ÇàÍÜÍõ×ÓÌøÎÊÌâ³éÏóÎª£º¶ÔÈÎÒâ¸ø¶¨Ò»¸öÕûÊýdestinationºÍÁ½¸öÕýÕûÊýlength1£¬length2£¬ÊÇ·ñ´æÔÚÁ½¸öÕûÊýX, YÊ¹µÃdestination = X * length1 + Y * length2. ²¢¸ø³öÊ¹µÈÊ½³ÉÁ¢ÇÒ|X| + |Y|×îÐ¡µÄX, Y (ÈôµÈÊ½¿É³ÉÁ¢£¬ÔòXÓëYµÄ½âÓÉÎÞÊý¸ö).
-Ëã·¨Ë¼Â·£º
-	1. ²»·ÁÉèlength1 > length2 > length3 > length4 > length5 > length6 > length7> length8 >¡¤¡¤¡¤¡¤¡¤¡¤ ,
-	 ÈçÏÂÍ¼ËùÊ¾£¬ÔòÓÐlength1 = length2 + length3£¬length2 = length3 + length4£¬length3 = length4 + length5, ¡¤¡¤¡¤¡¤¡¤¡¤£¬°´ÕÕÈç´Ë£¬½«³¤¶È²»µÈµÄÁ½¶ÎÒÀ´Î·Ö¸îÏÂÈ¥£¬×îÖÕ»áµÃµ½ÏàµÈµÄÁ½¶Î£¬¼´length(N-2) = length(N-1) + length(N), ÇÒlength(N)=length(N-1)=minStep£¬Ôòlength(N-2) = 2 * minStep£¬length(N-3) = length(N-2) + length(N-1) = 3 * minStep£¬ÒÀ´ËÀàÍÆ£¬length1ºÍlength2½Ô¿ÉÓÐminStep±íÊ¾£¬¼´length1 = k1 * minStep, length2 = k2 * minStep; 
-	´ËÍâminStep = length(N) = length(N-2) - length(N-1)=(length(N-4) - length(N-3)) - (length(N-3) - length(N-2) = ¡¤¡¤¡¤¡¤¡¤¡¤=k3 * length1 + k4 * length2;
-	ËùÒÔÒ»·½Ãædestination = X * length1 + Y * length2 = k1 * X *minStep + k2 * Y * minStep = (k1 * X + k2 * Y) * minStep. ËùÒÔµÈÊ½Òª³ÉÁ¢£¬ÔòdestinationÒ»¶¨ÒªÄÜ±»minStepÕû³ý£¬¼ÇÕû³ýºóÉÌÎªk5£¬¼´ k5 =  (k1 * X + k2 * Y) .
-	ÁíÒ»·½ÃæminStep = k3 * length1 + k4 * length2. destination = k5 * minStep = k5 *  (k3 * length1 + k4 * length2).
-	¼´destinationÄÜ±»minStepÕû³ý¾ÍÒ»¶¨ÄÜ±»length1ºÍlength2±íÊ¾.
-	ÓÉ´Ë£¬ÏÈ·Ö¸î³¤¶ÈÇó³öminStepÒÔ¼°k3ºÍk4£¬ÔÙÅÐ¶ÏdestinationÄÜ·ñ±»minStepÕû³ý£¬ÄÜÔò´æÔÚ½âX = k3 * k5, Y = k5 * k4; ²»ÄÜ£¬ÔòÎÞ½â.
+é’è›™çŽ‹å­åªåœ¨ä¸€æ¡ç›´çº¿ä¸Šè·³è·ƒï¼Œå…¶å¼€å§‹ä½ç½®åœ¨åŽŸç‚¹0ä¸Šï¼Œå¯å‘å‰æˆ–è€…å‘åŽè·³ï¼Œä½†åªèƒ½ä»¥ä¸¤ç§æŒ‡å®šçš„é•¿åº¦(length1, length2)è¿›è¡Œè·³è·ƒã€‚åˆ¤æ–­é’è›™åœ¨ä¸¤ç§æŒ‡å®šçš„è·³è·ƒé•¿åº¦ä¸‹èƒ½å¦è·³åˆ°æŒ‡å®šçš„ç›®æ ‡åœ°ç‚¹(destination)ï¼Œå¹¶ç»™å‡ºä½¿è·³æ•°æœ€å°çš„è·³è·ƒæ–¹æ³•ã€‚
+é’è›™çŽ‹å­è·³é—®é¢˜æŠ½è±¡ä¸ºï¼šå¯¹ä»»æ„ç»™å®šä¸€ä¸ªæ•´æ•°destinationå’Œä¸¤ä¸ªæ­£æ•´æ•°length1ï¼Œlength2ï¼Œæ˜¯å¦å­˜åœ¨ä¸¤ä¸ªæ•´æ•°X, Yä½¿å¾—destination = X * length1 + Y * length2. å¹¶ç»™å‡ºä½¿ç­‰å¼æˆç«‹ä¸”|X| + |Y|æœ€å°çš„X, Y (è‹¥ç­‰å¼å¯æˆç«‹ï¼Œåˆ™Xä¸ŽYçš„è§£ç”±æ— æ•°ä¸ª).
+ç®—æ³•æ€è·¯ï¼š
+	1. ä¸å¦¨è®¾length1 > length2 > length3 > length4 > length5 > length6 > length7> length8 >Â·Â·Â·Â·Â·Â· ,
+	 å¦‚ä¸‹å›¾æ‰€ç¤ºï¼Œåˆ™æœ‰length1 = length2 + length3ï¼Œlength2 = length3 + length4ï¼Œlength3 = length4 + length5, Â·Â·Â·Â·Â·Â·ï¼ŒæŒ‰ç…§å¦‚æ­¤ï¼Œå°†é•¿åº¦ä¸ç­‰çš„ä¸¤æ®µä¾æ¬¡åˆ†å‰²ä¸‹åŽ»ï¼Œæœ€ç»ˆä¼šå¾—åˆ°ç›¸ç­‰çš„ä¸¤æ®µï¼Œå³length(N-2) = length(N-1) + length(N), ä¸”length(N)=length(N-1)=minStepï¼Œåˆ™length(N-2) = 2 * minStepï¼Œlength(N-3) = length(N-2) + length(N-1) = 3 * minStepï¼Œä¾æ­¤ç±»æŽ¨ï¼Œlength1å’Œlength2çš†å¯æœ‰minStepè¡¨ç¤ºï¼Œå³length1 = k1 * minStep, length2 = k2 * minStep; 
+	æ­¤å¤–minStep = length(N) = length(N-2) - length(N-1)=(length(N-4) - length(N-3)) - (length(N-3) - length(N-2) = Â·Â·Â·Â·Â·Â·=k3 * length1 + k4 * length2;
+	æ‰€ä»¥ä¸€æ–¹é¢destination = X * length1 + Y * length2 = k1 * X *minStep + k2 * Y * minStep = (k1 * X + k2 * Y) * minStep. æ‰€ä»¥ç­‰å¼è¦æˆç«‹ï¼Œåˆ™destinationä¸€å®šè¦èƒ½è¢«minStepæ•´é™¤ï¼Œè®°æ•´é™¤åŽå•†ä¸ºk5ï¼Œå³ k5 =  (k1 * X + k2 * Y) .
+	å¦ä¸€æ–¹é¢minStep = k3 * length1 + k4 * length2. destination = k5 * minStep = k5 *  (k3 * length1 + k4 * length2).
+	å³destinationèƒ½è¢«minStepæ•´é™¤å°±ä¸€å®šèƒ½è¢«length1å’Œlength2è¡¨ç¤º.
+	ç”±æ­¤ï¼Œå…ˆåˆ†å‰²é•¿åº¦æ±‚å‡ºminStepä»¥åŠk3å’Œk4ï¼Œå†åˆ¤æ–­destinationèƒ½å¦è¢«minStepæ•´é™¤ï¼Œèƒ½åˆ™å­˜åœ¨è§£X = k3 * k5, Y = k5 * k4; ä¸èƒ½ï¼Œåˆ™æ— è§£.
 	|----------------------------------------------------length1----------------------------------------------------------------------|
 	|----------------------length2------------------------------------------------||------------------length3-------------------------|
 	|----------------------length3---------------------||---------length4---------|
@@ -16,20 +16,20 @@
                             .                                                                                                                   .
                             .                                                                                                                   .
                             .                                                                                                                   .
-	2. »¯½âÏµÊýX, Y£º
-	Éèlength1Óëlength2µÄ×î´ó¹«Ô¼ÊýÎªk6, ¼´mlength1 = length1 / k6; mlength2 = length2 / k6;  Ôò¶ÔÓÚ·½³Ìk7 * length1 = k8 * length2 > 0, k8 = mlength1, k7 = mlength2ÊÇÆäµÄ½â£¬ÇÒ´ËÊ±³É¼¨k7 * length1×îÐ¡.
-	ÓÉminStep = length(N) = length(N-2) - length(N-1)=(length(N-4) - length(N-3)) - (length(N-3) - length(N-2) = ¡¤¡¤¡¤¡¤¡¤¡¤=k3 * length1 + k4 * length2¿ÉÖª£¬k3¡¢k4±ØÎªÒ»ÕýÒ»¸º£¬¹Ê´ËÊ±µÄX = k3 * k5, Y = k5 * k4£¬±ØÎªÒ»ÕýÒ»¸º.
-	°´ÕÕÒ»¶¨µÄ·½Ê½Í¬Ê±¼õÐ¡ÕýÏµÊý£¬Ôö´ó¸ºÏµÊý£¬¿É×öµ½destination = X * length1 + Y * length2. ÇÒÏµÊýµÄ¾ø¶ÔÖµºÍÔÚ¼õÐ¡.
+	2. åŒ–è§£ç³»æ•°X, Yï¼š
+	è®¾length1ä¸Žlength2çš„æœ€å¤§å…¬çº¦æ•°ä¸ºk6, å³mlength1 = length1 / k6; mlength2 = length2 / k6;  åˆ™å¯¹äºŽæ–¹ç¨‹k7 * length1 = k8 * length2 > 0, k8 = mlength1, k7 = mlength2æ˜¯å…¶çš„è§£ï¼Œä¸”æ­¤æ—¶æˆç»©k7 * length1æœ€å°.
+	ç”±minStep = length(N) = length(N-2) - length(N-1)=(length(N-4) - length(N-3)) - (length(N-3) - length(N-2) = Â·Â·Â·Â·Â·Â·=k3 * length1 + k4 * length2å¯çŸ¥ï¼Œk3ã€k4å¿…ä¸ºä¸€æ­£ä¸€è´Ÿï¼Œæ•…æ­¤æ—¶çš„X = k3 * k5, Y = k5 * k4ï¼Œå¿…ä¸ºä¸€æ­£ä¸€è´Ÿ.
+	æŒ‰ç…§ä¸€å®šçš„æ–¹å¼åŒæ—¶å‡å°æ­£ç³»æ•°ï¼Œå¢žå¤§è´Ÿç³»æ•°ï¼Œå¯åšåˆ°destination = X * length1 + Y * length2. ä¸”ç³»æ•°çš„ç»å¯¹å€¼å’Œåœ¨å‡å°.
 	destination = X * length1 + Y * length2  = (X + mlength2) * length1 + (Y - mlength1) *length2 = (X - mlength2) * length1 + (Y + mlength1) *length2.
-	ÓÉÓÚmlength1¡¢mlength2ÊÇlength1¡¢length2Ô¼È¥×î´ó¹«Ô¼ÊýºóµÄÖµ£¬(X, Y)Óë(X + mlength2, Y - mlength1)Ö®¼äÒÔ¼°(X, Y)Óë(X - mlength2, Y + mlength1)Ö®¼ä²»´æÔÚÈÎºÎÕûÊýÊ¹µÃÄ¿±êµÈÊ½ÏàµÈ.
-	ËùÒÔ£º
-	ÈôX > 0£¬Y < 0, ÔòÈÃXÒÔmlength2ÒÀ´Î¼õÐ¡£¬YÒÔmlength1ÒÀ´ÎÔö´ó£¬´ËÊ±|X|+|Y|Ó¦Ïò×îÐ¡µÄ·½Ïò±ä»¯£¬ÖÕÖ¹Ìõ¼þÎª|X|+|Y|²»ÔÙ¼õÐ¡.
-	ÈôX < 0£¬Y > 0, ÔòÈÃXÒÔmlength2ÒÀ´ÎÔö´ó£¬YÒÔmlength1ÒÀ´Î¼õÐ¡£¬´ËÊ±|X|+|Y|Ó¦Ïò×îÐ¡µÄ·½Ïò±ä»¯£¬ÖÕÖ¹Ìõ¼þÎª|X|+|Y|²»ÔÙ¼õÐ¡.
+	ç”±äºŽmlength1ã€mlength2æ˜¯length1ã€length2çº¦åŽ»æœ€å¤§å…¬çº¦æ•°åŽçš„å€¼ï¼Œ(X, Y)ä¸Ž(X + mlength2, Y - mlength1)ä¹‹é—´ä»¥åŠ(X, Y)ä¸Ž(X - mlength2, Y + mlength1)ä¹‹é—´ä¸å­˜åœ¨ä»»ä½•æ•´æ•°ä½¿å¾—ç›®æ ‡ç­‰å¼ç›¸ç­‰.
+	æ‰€ä»¥ï¼š
+	è‹¥X > 0ï¼ŒY < 0, åˆ™è®©Xä»¥mlength2ä¾æ¬¡å‡å°ï¼ŒYä»¥mlength1ä¾æ¬¡å¢žå¤§ï¼Œæ­¤æ—¶|X|+|Y|åº”å‘æœ€å°çš„æ–¹å‘å˜åŒ–ï¼Œç»ˆæ­¢æ¡ä»¶ä¸º|X|+|Y|ä¸å†å‡å°.
+	è‹¥X < 0ï¼ŒY > 0, åˆ™è®©Xä»¥mlength2ä¾æ¬¡å¢žå¤§ï¼ŒYä»¥mlength1ä¾æ¬¡å‡å°ï¼Œæ­¤æ—¶|X|+|Y|åº”å‘æœ€å°çš„æ–¹å‘å˜åŒ–ï¼Œç»ˆæ­¢æ¡ä»¶ä¸º|X|+|Y|ä¸å†å‡å°.
 
 
-ÇàÍÜÍõ×ÓÌøÎÊÌâÀ©Õ¹£º
-ÇàÍÜÍõ×ÓÌøÎÊÌâ³éÏóÎª£º¶ÔÈÎÒâ¸ø¶¨Ò»¸öÕûÊýdestinationºÍÁ½¸öÕýÕûÊýlength1£¬length2£¬ÊÇ·ñ´æÔÚÁ½¸öÕûÊýX, YÊ¹µÃdestination = X * length1 + Y * length2. ²¢¸ø³öÊ¹µÈÊ½³ÉÁ¢ÇÒ|X| + |Y|×îÐ¡µÄX, Y (ÈôµÈÊ½¿É³ÉÁ¢£¬ÔòXÓëYµÄ½âÓÉÎÞÊý¸ö).
-ÆäÒªÇólength1£¬ length2ÎªÕýÕûÊý. Èô½«ÆäÀ©Õ¹µ½ÕûÊý·¶Î§£¬¼´£º¶ÔÈÎÒâ¸ø¶¨Ò»¸öÕûÊýA, B, C, ÊÇ·ñ´æÔÚÁ½¸öÕûÊýX, YÊ¹µÃC = X * A + Y * B. ²¢¸ø³öÊ¹µÈÊ½³ÉÁ¢ÇÒ|X| + |Y|×îÐ¡µÄX, Y (ÈôµÈÊ½¿É³ÉÁ¢£¬ÔòXÓëYµÄ½âÓÉÎÞÊý¸ö).
-Ëã·¨Ë¼Â·£º
-²ÎÊýA¡¢BµÄ·ûºÅ¿ÉÒÔ·Ö±ð×ª¼Þµ½ÏµÊýX¡¢YÍâ. ËùÒÔÏÈÒÔ¾ø¶ÔÖµÊý|A|ºÍ|B|²Î¼ÓÇó½âÔËËãC = X * |A| + Y * |B|Çó½â£¬´ËÊ±X = X * (A>0? 1: -1), Y = Y * (B>0? 1: -1), ¼´X¡¢Y·Ö±ð°üº¬ÁËA£¬BµÄ·ûºÅ¡£Çó½âËùµÃµÄÏµÊýX¿ÉÒÔ¿´×÷X * (-1) *(-1), Y * (-1) * (-1). ÈôA<0£¬ÔòÈ¡×ßÒ»¸ö(-1), X = -X£»·ñÔò X = X. ÈôB<0£¬ÔòÈ¡×ßÒ»¸ö(-1), Y = -Y£»·ñÔòY = Y.
+é’è›™çŽ‹å­è·³é—®é¢˜æ‰©å±•ï¼š
+é’è›™çŽ‹å­è·³é—®é¢˜æŠ½è±¡ä¸ºï¼šå¯¹ä»»æ„ç»™å®šä¸€ä¸ªæ•´æ•°destinationå’Œä¸¤ä¸ªæ­£æ•´æ•°length1ï¼Œlength2ï¼Œæ˜¯å¦å­˜åœ¨ä¸¤ä¸ªæ•´æ•°X, Yä½¿å¾—destination = X * length1 + Y * length2. å¹¶ç»™å‡ºä½¿ç­‰å¼æˆç«‹ä¸”|X| + |Y|æœ€å°çš„X, Y (è‹¥ç­‰å¼å¯æˆç«‹ï¼Œåˆ™Xä¸ŽYçš„è§£ç”±æ— æ•°ä¸ª).
+å…¶è¦æ±‚length1ï¼Œ length2ä¸ºæ­£æ•´æ•°. è‹¥å°†å…¶æ‰©å±•åˆ°æ•´æ•°èŒƒå›´ï¼Œå³ï¼šå¯¹ä»»æ„ç»™å®šä¸€ä¸ªæ•´æ•°A, B, C, æ˜¯å¦å­˜åœ¨ä¸¤ä¸ªæ•´æ•°X, Yä½¿å¾—C = X * A + Y * B. å¹¶ç»™å‡ºä½¿ç­‰å¼æˆç«‹ä¸”|X| + |Y|æœ€å°çš„X, Y (è‹¥ç­‰å¼å¯æˆç«‹ï¼Œåˆ™Xä¸ŽYçš„è§£ç”±æ— æ•°ä¸ª).
+ç®—æ³•æ€è·¯ï¼š
+å‚æ•°Aã€Bçš„ç¬¦å·å¯ä»¥åˆ†åˆ«è½¬å«åˆ°ç³»æ•°Xã€Yå¤–. æ‰€ä»¥å…ˆä»¥ç»å¯¹å€¼æ•°|A|å’Œ|B|å‚åŠ æ±‚è§£è¿ç®—C = X * |A| + Y * |B|æ±‚è§£ï¼Œæ­¤æ—¶X = X * (A>0? 1: -1), Y = Y * (B>0? 1: -1), å³Xã€Yåˆ†åˆ«åŒ…å«äº†Aï¼ŒBçš„ç¬¦å·ã€‚æ±‚è§£æ‰€å¾—çš„ç³»æ•°Xå¯ä»¥çœ‹ä½œX * (-1) *(-1), Y * (-1) * (-1). è‹¥A<0ï¼Œåˆ™å–èµ°ä¸€ä¸ª(-1), X = -Xï¼›å¦åˆ™ X = X. è‹¥B<0ï¼Œåˆ™å–èµ°ä¸€ä¸ª(-1), Y = -Yï¼›å¦åˆ™Y = Y.
 
