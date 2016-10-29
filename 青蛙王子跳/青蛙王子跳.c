@@ -4,11 +4,11 @@
 
 void main()
 {
-	int length1, length2, destination, lengthTemp, minStep;  //Ö¸¶¨Á½¸ö³¤¶Èlength1£¬length2£¬Ö¸¶¨ÖÕµãdestination£¬minStepÎªÓÉlength1ºÍlength2½øĞĞ¼Ó¼õÔËËã¿ÉµÃµ½µÄ×îĞ¡³¤¶È¡£ 
-	int length1Copy, length2Copy;                            //±¸·İlength1£¬length2 
-	int mlength1, mlength2;                                  //·Ö±ğ±íÊ¾length1£¬length2³ıÒÔlength1ºÍlength2µÄ×î´ó¹«Ô¼ÊıºóµÄÊıÖµ¡£ 
+	int length1, length2, destination, lengthTemp, minStep;  //æŒ‡å®šä¸¤ä¸ªé•¿åº¦length1ï¼Œlength2ï¼ŒæŒ‡å®šç»ˆç‚¹destinationï¼ŒminStepä¸ºç”±length1å’Œlength2è¿›è¡ŒåŠ å‡è¿ç®—å¯å¾—åˆ°çš„æœ€å°é•¿åº¦ã€‚ 
+	int length1Copy, length2Copy;                            //å¤‡ä»½length1ï¼Œlength2 
+	int mlength1, mlength2;                                  //åˆ†åˆ«è¡¨ç¤ºlength1ï¼Œlength2é™¤ä»¥length1å’Œlength2çš„æœ€å¤§å…¬çº¦æ•°åçš„æ•°å€¼ã€‚ 
 	int minuendParamLen1, minuendParamLen2, subtrahendParamLen1, subtrahendParamLen2, differenceParamLen1, differenceParamLen2; 
-	//ÓÃÓÚ¼ÇÂ¼ÔËËã¹ı³ÌÖĞ±»¼õÊı£¬¼õÊı£¬²îÊıÓëlength1£¬length2µÄÊıÖµ¹ØÏµ£¬ÀıÈç£ºminuend = minuendParamLen1 * length1 + minuendParamLen2 * length2¡£ 
+	//ç”¨äºè®°å½•è¿ç®—è¿‡ç¨‹ä¸­è¢«å‡æ•°ï¼Œå‡æ•°ï¼Œå·®æ•°ä¸length1ï¼Œlength2çš„æ•°å€¼å…³ç³»ï¼Œä¾‹å¦‚ï¼šminuend = minuendParamLen1 * length1 + minuendParamLen2 * length2ã€‚ 
 	printf("Please input length1: ");
 	scanf("%d", &length1);
 	printf("Please input length2: ");
@@ -25,12 +25,12 @@ void main()
 	length1Copy = length1;
 	length2Copy = length2;
 	
-	minuendParamLen1 = 1;         //¼ÙÉèlength1 > length2, Ôò³õÊ¼±»¼õÊıÎªlength2£¬¼õÊıÎªlength2. 
+	minuendParamLen1 = 1;         //å‡è®¾length1 > length2, åˆ™åˆå§‹è¢«å‡æ•°ä¸ºlength2ï¼Œå‡æ•°ä¸ºlength2. 
 	minuendParamLen2 = 0;
 	subtrahendParamLen1 = 0;
 	subtrahendParamLen2 = 1;
 	
-	if(length1 < length2)        //Èç¹ûlength1 < length2, Ôò½»»»length1£¬length2ÊıÖµ£¬²¢¸üĞÂ³õÊ¼±»¼õÊıÎªÔ­length2£¬¼õÊıÎªÔ­length1. 
+	if(length1 < length2)        //å¦‚æœlength1 < length2, åˆ™äº¤æ¢length1ï¼Œlength2æ•°å€¼ï¼Œå¹¶æ›´æ–°åˆå§‹è¢«å‡æ•°ä¸ºåŸlength2ï¼Œå‡æ•°ä¸ºåŸlength1. 
 	{
 		lengthTemp = length1;
 		length1 = length2;
@@ -45,34 +45,34 @@ void main()
 	
 	mlength1 = length1;
 	mlength2 = length2;
-	while(mlength2 != 0)       //ÇóÈ¡length1£¬length2×î´ó¹«Ô¼Êı. 
+	while(mlength2 != 0)       //æ±‚å–length1ï¼Œlength2æœ€å¤§å…¬çº¦æ•°. 
 	{
 		lengthTemp = mlength1 % mlength2;
 		mlength1 = mlength2;
 		mlength2 = lengthTemp;
 	}
-	mlength2 = length2Copy / mlength1;  //»ñÈ¡length1£¬length2Ô¼È¥×î´ó¹«Ô¼ÊıµÄÊıÖµ. 
+	mlength2 = length2Copy / mlength1;  //è·å–length1ï¼Œlength2çº¦å»æœ€å¤§å…¬çº¦æ•°çš„æ•°å€¼. 
 	mlength1 = length1Copy / mlength1;
 	
-	minStep = length1;                  //³õÊ¼»¯minStepÎªlength1£¨×î´óÕß£©£¬ÔÚlength1=length2»òÕßlength2=0µÄÇé¿öÏÂ£¬minStepĞëÉèÎªlength1£¬²îÊıÓëlength1£¬length2µÄ¹ØÏµÓë±»¼õÊıÒ»ÖÂ¡£ 
+	minStep = length1;                  //åˆå§‹åŒ–minStepä¸ºlength1ï¼ˆæœ€å¤§è€…ï¼‰ï¼Œåœ¨length1=length2æˆ–è€…length2=0çš„æƒ…å†µä¸‹ï¼ŒminStepé¡»è®¾ä¸ºlength1ï¼Œå·®æ•°ä¸length1ï¼Œlength2çš„å…³ç³»ä¸è¢«å‡æ•°ä¸€è‡´ã€‚ 
 	differenceParamLen1 = minuendParamLen1;
 	differenceParamLen2 = minuendParamLen2;
 	
-	while((length1 > length2) && (length2 != 0)) //ÔÚlength1=length2»òÕßlength2=0µÄÇé¿öÎŞĞè¶îÍâ¼ÆËã£¬×îĞ¡³¤¶ÈminStep¼´Îªlength1. 
+	while((length1 > length2) && (length2 != 0)) //åœ¨length1=length2æˆ–è€…length2=0çš„æƒ…å†µæ— éœ€é¢å¤–è®¡ç®—ï¼Œæœ€å°é•¿åº¦minStepå³ä¸ºlength1. 
 	{
-		lengthTemp = length1 - length2;          //Çólength1Óëlength2µÄ²î¡£ 
+		lengthTemp = length1 - length2;          //æ±‚length1ä¸length2çš„å·®ã€‚ 
 		
-		differenceParamLen1 = minuendParamLen1 - subtrahendParamLen1; //¸üĞÂ²îÊıÓëlength1£¬length2µÄÊıÖµ¹ØÏµ¡£ 
+		differenceParamLen1 = minuendParamLen1 - subtrahendParamLen1; //æ›´æ–°å·®æ•°ä¸length1ï¼Œlength2çš„æ•°å€¼å…³ç³»ã€‚ 
 		differenceParamLen2 = minuendParamLen2 - subtrahendParamLen2;
 		
-		if(lengthTemp > length2)  //Èô²îÊı´óÓÚ¼õÊı£¬Ôò½«²îÊı¸³Öµ¸ø±»¼õÊı£¬²¢¸üĞÂ±»¼õÊıÓëlength1£¬length2µÄÊıÖµ¹ØÏµ¡£
+		if(lengthTemp > length2)  //è‹¥å·®æ•°å¤§äºå‡æ•°ï¼Œåˆ™å°†å·®æ•°èµ‹å€¼ç»™è¢«å‡æ•°ï¼Œå¹¶æ›´æ–°è¢«å‡æ•°ä¸length1ï¼Œlength2çš„æ•°å€¼å…³ç³»ã€‚
 		{
 			length1 = lengthTemp;
 			
 			minuendParamLen1 = differenceParamLen1;
 			minuendParamLen2 = differenceParamLen2;
 		}
-		else if(length2 > lengthTemp)  //Èô²îÊıĞ¡ÓÚ¼õÊı£¬Ôò½«¼õÊı¸³Öµ¸ø±»¼õÊı£¬²îÊı¸³Öµ¸ø¼õÊı£¬²¢¸üĞÂ±»¼õÊı£¬¼õÊıÓëlength1£¬length2µÄÊıÖµ¹ØÏµ¡£ 
+		else if(length2 > lengthTemp)  //è‹¥å·®æ•°å°äºå‡æ•°ï¼Œåˆ™å°†å‡æ•°èµ‹å€¼ç»™è¢«å‡æ•°ï¼Œå·®æ•°èµ‹å€¼ç»™å‡æ•°ï¼Œå¹¶æ›´æ–°è¢«å‡æ•°ï¼Œå‡æ•°ä¸length1ï¼Œlength2çš„æ•°å€¼å…³ç³»ã€‚ 
 		{
 			length1 = length2;
 			length2 = lengthTemp; 
@@ -82,22 +82,22 @@ void main()
 			subtrahendParamLen1 = differenceParamLen1;
 			subtrahendParamLen2 = differenceParamLen2;
 		}
-		else                  //²îÊıÓë¼õÊıÏàµÈ£¬µÃµ½length1Óëlength2¼Ó¼õÔËËãºó¿ÉµÃµ½µÄ×îĞ¡³¤¶È£¬Îª²îÊı»òÕß¼õÊı¡£ 
+		else                  //å·®æ•°ä¸å‡æ•°ç›¸ç­‰ï¼Œå¾—åˆ°length1ä¸length2åŠ å‡è¿ç®—åå¯å¾—åˆ°çš„æœ€å°é•¿åº¦ï¼Œä¸ºå·®æ•°æˆ–è€…å‡æ•°ã€‚ 
 		{
 			minStep = lengthTemp;
 			break;
 		}
 	}
-	if((destination % minStep) == 0) //ÈôÖÕµãÊıÖµ¿É±»×îĞ¡³¤¶È£¬ÔòÖÕµã¿ÉÓĞ(destination / minStep)¸ö×îĞ¡³¤¶ÈµÄÔËËãµÃµ½¡£ 
+	if((destination % minStep) == 0) //è‹¥ç»ˆç‚¹æ•°å€¼å¯è¢«æœ€å°é•¿åº¦ï¼Œåˆ™ç»ˆç‚¹å¯æœ‰(destination / minStep)ä¸ªæœ€å°é•¿åº¦çš„è¿ç®—å¾—åˆ°ã€‚ 
 	{
 		differenceParamLen1 *= (destination / minStep);
 		differenceParamLen2 *= (destination / minStep);
 		
-		//»¯¼òÏµÊıdifferenceParamLen1£¬differenceParamLen2. destination = differenceParamLen1 * length1 + differenceParamLen2 * length2.
-		// mlength2 * length1 = mlength1 * length2. Ê¹¸ÃÊ½³ÉÁ¢×îĞ¡µÄmlength1¡¢mlength2Îªlength1¡¢length2Ô¼È¥×î´ó¹«Ô¼ÊıºóµÄÖµ. 
+		//åŒ–ç®€ç³»æ•°differenceParamLen1ï¼ŒdifferenceParamLen2. destination = differenceParamLen1 * length1 + differenceParamLen2 * length2.
+		// mlength2 * length1 = mlength1 * length2. ä½¿è¯¥å¼æˆç«‹æœ€å°çš„mlength1ã€mlength2ä¸ºlength1ã€length2çº¦å»æœ€å¤§å…¬çº¦æ•°åçš„å€¼. 
 		//destination = (differenceParamLen1 +/- mlength2) * length1 + (differenceParamLen2 -/+ mlength1)* length2
-		//ÓÉÉÏÃæ²½ÖèÇóÈ¡µÄdifferenceParamLen1£¬differenceParamLen2±ØÎªÒ»ÕıÒ»¸º£¨¼õ·¨ÔËËã£©¡£
-		//»¯¼ò½«ÌøÊı£¨¼´ÏµÊı£©Íù×îĞ¡ÊıÖµ£¨ÏµÊı¾ø¶ÔÖµºÍ×îĞ¡£©·½Ïò»¯¼ò¡£¼´±£Ö¤Ä¿±êµÈÊ½destination³ÉÁ¢£¬¿É½«ÕıÊı¼õĞ¡£¬¸ºÊıÔö´ó¡£ 
+		//ç”±ä¸Šé¢æ­¥éª¤æ±‚å–çš„differenceParamLen1ï¼ŒdifferenceParamLen2å¿…ä¸ºä¸€æ­£ä¸€è´Ÿï¼ˆå‡æ³•è¿ç®—ï¼‰ã€‚
+		//åŒ–ç®€å°†è·³æ•°ï¼ˆå³ç³»æ•°ï¼‰å¾€æœ€å°æ•°å€¼ï¼ˆç³»æ•°ç»å¯¹å€¼å’Œæœ€å°ï¼‰æ–¹å‘åŒ–ç®€ã€‚å³ä¿è¯ç›®æ ‡ç­‰å¼destinationæˆç«‹ï¼Œå¯å°†æ­£æ•°å‡å°ï¼Œè´Ÿæ•°å¢å¤§ã€‚ 
 		if((differenceParamLen1 > 0) && (differenceParamLen2 < 0))
  		{
 			while((ABS(differenceParamLen1) + ABS(differenceParamLen2)) > 

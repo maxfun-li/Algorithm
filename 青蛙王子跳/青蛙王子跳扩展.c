@@ -4,12 +4,12 @@
 
  void main()
  {
- 	int paramA, paramB, paramC;  //ÊäÈë²ÎÊıA¡¢B¡¢C, ¿ÉÕı¿É¸º¿ÉÁã. ÔËËã¹ı³ÌÖĞ²ÎÊıA¡¢BÒÔ¾ø¶ÔÖµ|A|¡¢|B|²ÎÓëÔËËã£¬×îºóÔÙµ÷ÕûÏµÊıX¡¢Y·ûºÅ. 
- 	int mParamA, mParamB;        //·Ö±ğ±íÊ¾²ÎÊı|A|¡¢|B|³ıÒÔ|A|ºÍ|B|µÄ×î´ó¹«Ô¼ÊıµÄÊıÖµ.
- 	int paramACopy, paramBCopy, paramTemp, paramMin; //paramACopy, paramBCopy±¸·İ²ÎÊıA¡¢B£¬paramTempÎª¼ÆËãÊ¹ÓÃµ½µÄÖĞ¼ä±äÁ¿£¬paramMinÎª²ÎÊı|A|¡¢|B|Õ·×ªÏà¼õºó¿É»ñµÃµÄ×îĞ¡ÕıÊı.
- 	int minuendCoefficientWithParamA, minuendCoefficientWithParamB;        //¼ÇÂ¼±»¼õÊıÓë²ÎÊı|A|ºÍ|B|µÄÊıÖµ¼ÆËã¹ØÏµ. 
- 	int subtrahendCoefficientWithParamA, subtrahendCoefficientWithParamB;  //¼ÇÂ¼¼õÊıÓë²ÎÊı|A|ºÍ|B|µÄÊıÖµ¼ÆËã¹ØÏµ. 
- 	int differenceCoefficientWithParamA, differenceCoefficientWithParamB;  //¼ÇÂ¼²îÊıÓë²ÎÊı|A|ºÍ|B|µÄÊıÖµ¼ÆËã¹ØÏµ. 
+ 	int paramA, paramB, paramC;  //è¾“å…¥å‚æ•°Aã€Bã€C, å¯æ­£å¯è´Ÿå¯é›¶. è¿ç®—è¿‡ç¨‹ä¸­å‚æ•°Aã€Bä»¥ç»å¯¹å€¼|A|ã€|B|å‚ä¸è¿ç®—ï¼Œæœ€åå†è°ƒæ•´ç³»æ•°Xã€Yç¬¦å·. 
+ 	int mParamA, mParamB;        //åˆ†åˆ«è¡¨ç¤ºå‚æ•°|A|ã€|B|é™¤ä»¥|A|å’Œ|B|çš„æœ€å¤§å…¬çº¦æ•°çš„æ•°å€¼.
+ 	int paramACopy, paramBCopy, paramTemp, paramMin; //paramACopy, paramBCopyå¤‡ä»½å‚æ•°Aã€Bï¼ŒparamTempä¸ºè®¡ç®—ä½¿ç”¨åˆ°çš„ä¸­é—´å˜é‡ï¼ŒparamMinä¸ºå‚æ•°|A|ã€|B|è¾—è½¬ç›¸å‡åå¯è·å¾—çš„æœ€å°æ­£æ•°.
+ 	int minuendCoefficientWithParamA, minuendCoefficientWithParamB;        //è®°å½•è¢«å‡æ•°ä¸å‚æ•°|A|å’Œ|B|çš„æ•°å€¼è®¡ç®—å…³ç³». 
+ 	int subtrahendCoefficientWithParamA, subtrahendCoefficientWithParamB;  //è®°å½•å‡æ•°ä¸å‚æ•°|A|å’Œ|B|çš„æ•°å€¼è®¡ç®—å…³ç³». 
+ 	int differenceCoefficientWithParamA, differenceCoefficientWithParamB;  //è®°å½•å·®æ•°ä¸å‚æ•°|A|å’Œ|B|çš„æ•°å€¼è®¡ç®—å…³ç³». 
  	
  	printf("*******************************************************************");
  	printf("\nThis program is used to calculate X and Y with C = A * X + B * Y.\n");
@@ -22,7 +22,7 @@
  	scanf("%d", &paramB);
  	printf("Please input parameter C(integer): ");
  	scanf("%d", &paramC);
- 	if((paramA == 0) && (paramB == 0))         //²ÎÊıA¡¢B¶¼Îª0£¬µ¥¶ÀÅĞ¶Ï´¦Àí¡£ 
+ 	if((paramA == 0) && (paramB == 0))         //å‚æ•°Aã€Béƒ½ä¸º0ï¼Œå•ç‹¬åˆ¤æ–­å¤„ç†ã€‚ 
  	{
  		if(paramC == 0)
  		{
@@ -38,12 +38,12 @@
  		system("pause");
  		return;
  	}
- 	paramACopy = paramA;                      //±¸·İ²ÎÊıA¡¢B 
+ 	paramACopy = paramA;                      //å¤‡ä»½å‚æ•°Aã€B 
  	paramBCopy = paramB;
 
- 	if(paramA < 0)  paramA *= -1;             //ÉáÈ¥²ÎÊıA¡¢B·ûºÅ£¬È¡Æä¾ø¶ÔÖµ¡£ 
+ 	if(paramA < 0)  paramA *= -1;             //èˆå»å‚æ•°Aã€Bç¬¦å·ï¼Œå–å…¶ç»å¯¹å€¼ã€‚ 
  	if(paramB < 0)  paramB *= -1;
- 	if(paramA == 0)                           //¼ÙÉè²ÎÊı|A|>|B|, Ôò±»¼õÊıÈ¡Îª|A|£¬¼õÊıÈ¡Îª|B|£¬¸üĞÂ±»¼õÊı¡¢¼õÊıÓë²ÎÊı|A|ºÍ|B|µÄÊıÖµ¼ÆËã¹ØÏµ. 
+ 	if(paramA == 0)                           //å‡è®¾å‚æ•°|A|>|B|, åˆ™è¢«å‡æ•°å–ä¸º|A|ï¼Œå‡æ•°å–ä¸º|B|ï¼Œæ›´æ–°è¢«å‡æ•°ã€å‡æ•°ä¸å‚æ•°|A|å’Œ|B|çš„æ•°å€¼è®¡ç®—å…³ç³». 
  	{
  		minuendCoefficientWithParamA = 0;
  		minuendCoefficientWithParamB = 0;
@@ -65,7 +65,7 @@
  		subtrahendCoefficientWithParamB = 1;
 	}
 
- 	if(paramA < paramB)                    //Èô²ÎÊı|A|<|B|£¬Ôò½»»»|A|¡¢|B|£¬²¢Í¬²½¸üĞÂ±»¼õÊı¡¢¼õÊıÓëÔ­²ÎÊı|A|ºÍ|B|µÄÊıÖµ¼ÆËã¹ØÏµ 
+ 	if(paramA < paramB)                    //è‹¥å‚æ•°|A|<|B|ï¼Œåˆ™äº¤æ¢|A|ã€|B|ï¼Œå¹¶åŒæ­¥æ›´æ–°è¢«å‡æ•°ã€å‡æ•°ä¸åŸå‚æ•°|A|å’Œ|B|çš„æ•°å€¼è®¡ç®—å…³ç³» 
  	{
  		paramTemp = paramA;
  		paramA = paramB;
@@ -82,34 +82,34 @@
  	mParamA = paramA;
  	mParamB = paramB;
 
- 	while(mParamB != 0)                   //ÇóÈ¡²ÎÊı|A|ºÍ|B|µÄ×î´ó¹«Ô¼Êı. 
+ 	while(mParamB != 0)                   //æ±‚å–å‚æ•°|A|å’Œ|B|çš„æœ€å¤§å…¬çº¦æ•°. 
  	{
  		paramTemp = mParamA % mParamB;
  		mParamA = mParamB;
  		mParamB = paramTemp; 
  	}
 
- 	mParamB = ABS(paramBCopy) / mParamA;  //ÇóÈ¡Ô­²ÎÊı|A|¡¢|B|³ıÒÔËüÃÇ×îĞ¡¹«Ô¼ÊıºóµÄÊıÖµ.
+ 	mParamB = ABS(paramBCopy) / mParamA;  //æ±‚å–åŸå‚æ•°|A|ã€|B|é™¤ä»¥å®ƒä»¬æœ€å°å…¬çº¦æ•°åçš„æ•°å€¼.
  	mParamA = ABS(paramACopy) / mParamA;
 
- 	paramMin = paramA;     //³õÊ¼»¯×îĞ¡ÕıÊıÎª|A|£¬²¢¸üĞÂ²îÊıÓë|A|¡¢|B|µÄÊıÖµÔËËã¹ØÏµ. µ±|A|=|B|»òÕß|B|=0Ê±£¬×îĞ¡ÕıÊı¼´Îª|A|£¬¶ÔÓ¦ÊıÖµÔËËã¹ØÏµ¼´Îª±»¼õÊıµÄÊıÖµÔËËã¹ØÏµ. 
+ 	paramMin = paramA;     //åˆå§‹åŒ–æœ€å°æ­£æ•°ä¸º|A|ï¼Œå¹¶æ›´æ–°å·®æ•°ä¸|A|ã€|B|çš„æ•°å€¼è¿ç®—å…³ç³». å½“|A|=|B|æˆ–è€…|B|=0æ—¶ï¼Œæœ€å°æ­£æ•°å³ä¸º|A|ï¼Œå¯¹åº”æ•°å€¼è¿ç®—å…³ç³»å³ä¸ºè¢«å‡æ•°çš„æ•°å€¼è¿ç®—å…³ç³». 
  	differenceCoefficientWithParamA = minuendCoefficientWithParamA;
  	differenceCoefficientWithParamB = minuendCoefficientWithParamB;
  	
- 	while((paramA > paramB) && (paramB != 0)) //µ±|A|=|B|»òÕß|B|=0Ê±£¬×îĞ¡³¤¶È¼´Îª|A|£¬¶ÔÓ¦ÊıÖµÔËËã¹ØÏµ¼´Îª±»¼õÊıµÄÊıÖµÔËËã¹ØÏµ, ÎŞĞè¼ÆËãÇó½â. 
+ 	while((paramA > paramB) && (paramB != 0)) //å½“|A|=|B|æˆ–è€…|B|=0æ—¶ï¼Œæœ€å°é•¿åº¦å³ä¸º|A|ï¼Œå¯¹åº”æ•°å€¼è¿ç®—å…³ç³»å³ä¸ºè¢«å‡æ•°çš„æ•°å€¼è¿ç®—å…³ç³», æ— éœ€è®¡ç®—æ±‚è§£. 
  	{
- 		paramTemp = paramA - paramB;          //Çó²îÊı|A|-|B|£¬²¢¸üĞÂ²îÊıÓë|A|¡¢|B|¼ÆËã¹ØÏµ.
+ 		paramTemp = paramA - paramB;          //æ±‚å·®æ•°|A|-|B|ï¼Œå¹¶æ›´æ–°å·®æ•°ä¸|A|ã€|B|è®¡ç®—å…³ç³».
 
  		differenceCoefficientWithParamA = minuendCoefficientWithParamA - subtrahendCoefficientWithParamA;
  		differenceCoefficientWithParamB = minuendCoefficientWithParamB - subtrahendCoefficientWithParamB;
- 		if(paramTemp > paramB)                //Èô²îÊı´óÓÚ¼õÊı£¬Ôò½«²îÊı¸³Öµ¸ø±»¼õÊı£¬²¢¸üĞÂ±»¼õÊıÓë|A|¡¢|B|µÄÔËËã¹ØÏµ. 
+ 		if(paramTemp > paramB)                //è‹¥å·®æ•°å¤§äºå‡æ•°ï¼Œåˆ™å°†å·®æ•°èµ‹å€¼ç»™è¢«å‡æ•°ï¼Œå¹¶æ›´æ–°è¢«å‡æ•°ä¸|A|ã€|B|çš„è¿ç®—å…³ç³». 
  		{
  			paramA = paramTemp;
 
  			minuendCoefficientWithParamA = differenceCoefficientWithParamA;
  			minuendCoefficientWithParamB = differenceCoefficientWithParamB;
  		}
- 		else if(paramTemp < paramB)           //Èô²îÊıĞ¡ÓÚ¼õÊı£¬Ôò½«¼õÊı¸³Öµ¸ø±»¼õÊı£¬²îÊı¸³Öµ¸ø¼õÊı£¬²¢¸üĞÂ±»¼õÊı¡¢¼õÊıÓë|A|¡¢|B|µÄÔËËã¹ØÏµ.
+ 		else if(paramTemp < paramB)           //è‹¥å·®æ•°å°äºå‡æ•°ï¼Œåˆ™å°†å‡æ•°èµ‹å€¼ç»™è¢«å‡æ•°ï¼Œå·®æ•°èµ‹å€¼ç»™å‡æ•°ï¼Œå¹¶æ›´æ–°è¢«å‡æ•°ã€å‡æ•°ä¸|A|ã€|B|çš„è¿ç®—å…³ç³».
  		{
  			paramA = paramB;
  			paramB = paramTemp;
@@ -119,22 +119,22 @@
  			subtrahendCoefficientWithParamA = differenceCoefficientWithParamA;
  			subtrahendCoefficientWithParamB = differenceCoefficientWithParamB;
  		}
- 		else                                //Èô²îÊıµÈÓÚ¼õÊı£¬Ôò»ñÈ¡µ½×îĞ¡ÊıÖµ(|A|¡¢|B|Õ·×ªÏà¼õÔËËã¿ÉµÃµ½µÄ×îĞ¡ÕıÊı).¼´Îª²îÊı(»òÕß¼õÊı).×îĞ¡ÕıÊıÓë|A|¡¢|B|µÄÔËËã¹ØÏµ¼´Îª²îÊıµÄÔËËã¹ØÏµ. 
+ 		else                                //è‹¥å·®æ•°ç­‰äºå‡æ•°ï¼Œåˆ™è·å–åˆ°æœ€å°æ•°å€¼(|A|ã€|B|è¾—è½¬ç›¸å‡è¿ç®—å¯å¾—åˆ°çš„æœ€å°æ­£æ•°).å³ä¸ºå·®æ•°(æˆ–è€…å‡æ•°).æœ€å°æ­£æ•°ä¸|A|ã€|B|çš„è¿ç®—å…³ç³»å³ä¸ºå·®æ•°çš„è¿ç®—å…³ç³». 
  		{
  			paramMin = paramTemp;
  			break;
  		}
  	}
- 	if((paramC % paramMin) == 0)              //ÈôÄ¿±êÊı¿É±»×îĞ¡ÕıÊıÕû³ı£¬ÔòÄ¿±êÊı¿ÉÓÉ(paramC / paramMin)´Î×îĞ¡ÕıÊıÓë|A|¡¢|B|µÄÔËËã¹ØÏµÇóµÃ¡£ 
+ 	if((paramC % paramMin) == 0)              //è‹¥ç›®æ ‡æ•°å¯è¢«æœ€å°æ­£æ•°æ•´é™¤ï¼Œåˆ™ç›®æ ‡æ•°å¯ç”±(paramC / paramMin)æ¬¡æœ€å°æ­£æ•°ä¸|A|ã€|B|çš„è¿ç®—å…³ç³»æ±‚å¾—ã€‚ 
  	{
  		differenceCoefficientWithParamA *= (paramC / paramMin);
  		differenceCoefficientWithParamB *= (paramC / paramMin);
 
-        //»¯¼òÏµÊıdifferenceCoefficientWithParamA£¬differenceCoefficientWithParamB. C = differenceCoefficientWithParamA * |A| + differenceCoefficientWithParamB * |B|.
-		// mParamB * |A| = mParamA * |B|. Ê¹¸ÃÊ½³ÉÁ¢×îĞ¡µÄmParamA¡¢mParamBÎª|A|¡¢|B|Ô¼È¥×î´ó¹«Ô¼ÊıºóµÄÖµ. 
+        //åŒ–ç®€ç³»æ•°differenceCoefficientWithParamAï¼ŒdifferenceCoefficientWithParamB. C = differenceCoefficientWithParamA * |A| + differenceCoefficientWithParamB * |B|.
+		// mParamB * |A| = mParamA * |B|. ä½¿è¯¥å¼æˆç«‹æœ€å°çš„mParamAã€mParamBä¸º|A|ã€|B|çº¦å»æœ€å¤§å…¬çº¦æ•°åçš„å€¼. 
 		//C = (differenceCoefficientWithParamA +/- mParamB) * |A| + (differenceCoefficientWithParamB -/+ mParamA)* |B|
-		//ÓÉÉÏÃæ²½ÖèÇóÈ¡µÄdifferenceCoefficientWithParamA£¬differenceCoefficientWithParamB±ØÎªÒ»ÕıÒ»¸º£¨¼õ·¨ÔËËã£©¡£
-		//½«ÏµÊıÍùÏµÊı¾ø¶ÔÖµºÍ×îĞ¡µÄ·½Ïò»¯¼ò¡£¼´±£Ö¤Ä¿±êµÈÊ½C³ÉÁ¢£¬¿É½«ÕıÊı¼õĞ¡£¬¸ºÊıÔö´ó¡£
+		//ç”±ä¸Šé¢æ­¥éª¤æ±‚å–çš„differenceCoefficientWithParamAï¼ŒdifferenceCoefficientWithParamBå¿…ä¸ºä¸€æ­£ä¸€è´Ÿï¼ˆå‡æ³•è¿ç®—ï¼‰ã€‚
+		//å°†ç³»æ•°å¾€ç³»æ•°ç»å¯¹å€¼å’Œæœ€å°çš„æ–¹å‘åŒ–ç®€ã€‚å³ä¿è¯ç›®æ ‡ç­‰å¼Cæˆç«‹ï¼Œå¯å°†æ­£æ•°å‡å°ï¼Œè´Ÿæ•°å¢å¤§ã€‚
  		if((differenceCoefficientWithParamA > 0) && (differenceCoefficientWithParamB < 0))
  		{
 			while((ABS(differenceCoefficientWithParamA) + ABS(differenceCoefficientWithParamB)) > 
@@ -154,8 +154,8 @@
  			}
  		}
 
-        //¸ù¾İA¡¢BµÄ·ûºÅµ÷ÕûdifferenceCoefficientWithParamA¡¢differenceCoefficientWithParamBµÄ·ûºÅ£¬Ê¹CµÈÊ½ÈÔ³ÉÁ¢.
-		//ÇÒÈÔÓĞ|differenceCoefficientWithParamA| + |differenceCoefficientWithParamB|×îĞ¡. 
+        //æ ¹æ®Aã€Bçš„ç¬¦å·è°ƒæ•´differenceCoefficientWithParamAã€differenceCoefficientWithParamBçš„ç¬¦å·ï¼Œä½¿Cç­‰å¼ä»æˆç«‹.
+		//ä¸”ä»æœ‰|differenceCoefficientWithParamA| + |differenceCoefficientWithParamB|æœ€å°. 
  		if(paramACopy < 0) differenceCoefficientWithParamA *= -1;
  		if(paramBCopy < 0) differenceCoefficientWithParamB *= -1;
  		printf("\nYes!, The answer is exist!");
